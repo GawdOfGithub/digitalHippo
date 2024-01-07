@@ -6,6 +6,8 @@ import ModeToggle from './page'
 import Providers from '@/app/components/provider'
 import { ClerkProvider } from '@clerk/nextjs'
 const inter = Inter({ subsets: ['latin'] })
+import { cn } from '@/lib/utils'
+import Navbar from '@/app/components/Navbar'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -29,10 +31,17 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
        
        <head />
-      <body className={inter.className} >
+      <body className={cn("relative h-full font-sans antialiased",inter.className)}>
       <Providers>
      <ThemeProvider>
+      <main className='relative flex flex-col min-h-screen'>
+        <div className='flex-grow flex-1'>
+          <Navbar/>
         {children}
+        
+        </div>
+       
+        </main>
         </ThemeProvider>
         </Providers>
       </body>

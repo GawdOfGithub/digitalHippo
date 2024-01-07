@@ -3,7 +3,9 @@ import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button, DropdownIt
 import {ChevronDown, Lock, Activity, Flash, Server, TagUser, Scale} from "@/app/components/ui/Icons.jsx";
 import {AcmeLogo} from "@/app/components/AcmeLogo";
 import {Button as ShadButton, buttonVariants} from '@/app/components/ui/button'
-
+import MaxWidthWrapper from "./MaxWidthWrapper";
+import Cart from "@/app/components/Cart"
+import {Separator} from "chad/separator"
 import ModeToggle from "./ModdleToggle";
 export default function App() {
   const icons = {
@@ -17,6 +19,7 @@ export default function App() {
   };
 
   return (
+    <MaxWidthWrapper>
     <Navbar>
       <NavbarBrand>
         <AcmeLogo />
@@ -140,8 +143,15 @@ export default function App() {
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
+        <NavbarItem>
         <ModeToggle/>
+        </NavbarItem>
+        <NavbarItem>
+       
+        <Cart/>
+        </NavbarItem>
       </NavbarContent>
     </Navbar>
+    </MaxWidthWrapper>
   );
 }
